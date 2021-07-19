@@ -349,14 +349,6 @@ int main() {
         del.insert(address);
     }
 
-    ifstream koch;
-    koch.open("koch.csv");
-    if (koch.is_open()) cout << "File of koch is open" << endl;
-    while (getline(koch, line)) {
-        koch >> address;
-        del.insert(address);
-    }
-
     cout << "Storage is full" << endl;
 
     ofstream output;
@@ -365,7 +357,7 @@ int main() {
 
     for (auto &it:storage)
         //if (!del.count(it))
-            output << it << ",200" << endl;
+        output << it << ",200" << endl;
 
     Uni.close();
     Sushi.close();
