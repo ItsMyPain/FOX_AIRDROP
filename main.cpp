@@ -59,7 +59,7 @@ int main() {
     while (getline(Sushi, line)) {
         Sushi >> hech;
         Sushi >> none;
-        Sushi >> index;;
+        Sushi >> index;
         Sushi >> address;
         Sushi >> to;
         Sushi >> value;
@@ -356,7 +356,7 @@ int main() {
     if (output.is_open()) cout << "File of output is open" << endl;
 
     for (auto &it:storage)
-        //if (!del.count(it))
+        if (!del.count(it))
         output << it << ",200" << endl;
 
     Uni.close();
