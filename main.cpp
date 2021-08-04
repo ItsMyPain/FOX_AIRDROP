@@ -6,7 +6,6 @@
 using namespace std;
 
 int main() {
-
     string hech;
     string none;
     string index;
@@ -349,10 +348,18 @@ int main() {
         del.insert(address);
     }
 
+    ifstream their;
+    their.open("their.csv");
+    if (their.is_open()) cout << "File of their is open" << endl;
+    while (getline(their, line)) {
+        their >> address;
+        storage.insert(address);
+    }
+
     cout << "Storage is full" << endl;
 
     ofstream output;
-    output.open("output.csv");
+    output.open("Final list.csv");
     if (output.is_open()) cout << "File of output is open" << endl;
 
     for (auto &it:storage)
